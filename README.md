@@ -16,4 +16,4 @@ Steps we did :
 
 Link to the Tableau dashboard : 
 
-https://public.tableau.com/app/profile/armonia8525/viz/CallsDashboard_16548474864490/CALLSDASHBOARD
+https://public.tableau.com/views/CallsDashboard_16548474864490/CALLSDASHBOARD?:language=en-GB&:display_count=n&:origin=viz_share_link
