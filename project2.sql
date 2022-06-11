@@ -47,6 +47,8 @@ SET SQL_SAFE_UPDATES = 0;
 
 UPDATE calls SET call_timestamp = str_to_date(call_timestamp, "%m/%d/%Y");
 
+UPDATE calls SET csat_score = NULL WHERE csat_score = 0;
+
 SET SQL_SAFE_UPDATES = 1;
 
 SELECT * FROM calls LIMIT 10;
@@ -97,7 +99,7 @@ SELECT DAYNAME(call_timestamp) as Day_of_call, COUNT(*) num_of_calls FROM calls 
 -- Aggregations :
 
 SELECT MIN(csat_score) AS min_score, MAX(csat_score) AS max_score, ROUND(AVG(csat_score),1) AS avg_score
-FROM calls WHERE csat_score != 0; # MySql added 0 to blank rows. But the min is 1.
+FROM calls WHERE csat_score != 0; 
 
 SELECT MIN(call_timestamp) AS earliest_date, MAX(call_timestamp) AS most_recent FROM calls;
 
@@ -122,8 +124,4 @@ SELECT sentiment, AVG(call_duration_minutes) FROM calls GROUP BY 1 ORDER BY 2 DE
 
 -- more advanced queries.
 
-SELECT call_timestamp, MAX(call_duration_minutes) OVER(PARTITION BY call_timestamp) FROM calls GROUP BY 1 ORDER BY 2 DESC;
-
-
-
-
+SELECT call_timestamp, MAX(call_duration_minutes) OVER(PARTITION BY call_timestamp) AS max_call_duration FROM calls GROUP BY 1 ORDER BY 2 DESC;
