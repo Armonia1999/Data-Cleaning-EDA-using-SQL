@@ -17,3 +17,5 @@ Steps we did :
 Link to the Tableau dashboard : 
 
 https://public.tableau.com/views/CallsDashboard_16548474864490/CALLSDASHBOARD?:language=en-GB&:display_count=n&:origin=viz_share_link
+
+Link to project article : https://medium.com/@Armonia1999/data-analysis-project-using-sql-to-clean-and-analyse-data-64a24e84b730
